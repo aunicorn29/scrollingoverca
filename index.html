@@ -1,0 +1,325 @@
+<!doctype html>
+
+<html>
+	
+<head><script src="https://localhost:49506/8ee4ea609a6346c4cf34c2b621ac79ba.js"></script>
+
+	
+<!--The following displays language used in browser to interpret page -->
+<meta charset="UTF-8">
+
+<!--The following line of code displays the page title on a browser tab -->
+<title>Scrolling Over California | Home</title>
+
+<!--link tags are for linking to external files, in this case your CSS stylesheet-->
+<link href="style.css" rel="stylesheet" type="text/css">
+	
+<!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+<link href="normalize.css" rel="stylesheet" type="text/css">
+
+<!--the following tag tells the browser to adjust the site according to screen size-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--The following code links to the jquery library -->
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+<!--The following code links to the javascript file that runs the slideshow -->	
+<script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+    
+<!--The following code links to the javascript file that runs the parallax image -->    
+<script src="js/parallax.min.js"></script>
+	
+<!--The following code links to Google Fonts-->
+<link href="https://fonts.googleapis.com/css?family=Tangerine"" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	
+<!--The following javscript runs the jquery slideshow -->
+<script type="text/javascript">
+$('#slider').cycle({});
+</script>
+
+<!--The following javascript runs the nav bar which disappears on scroll-->
+<script type="text/javascript">
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+</script>
+    
+<!--Favicon - images are in a folder called 'fav'-->
+<link rel="Mouse 2" sizes="180x168" href="C:\Users\ayp90\OneDrive\Desktop\realj410phillips\Website (Real)\fav\Mouse 2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="C:\Users\ayp90\OneDrive\Desktop\realj410phillips\Website (Real)\fav\Mouse 2.png">
+<link rel="icon" type="image/png" sizes="16x16" href="C:\Users\ayp90\OneDrive\Desktop\realj410phillips\Website (Real)\fav\Mouse 2.png">
+<link rel="manifest" href="C:\Users\ayp90\OneDrive\Desktop\realj410phillips\Website (Real)\fav\Mouse 2.png">
+<link rel="mask-icon" href="C:\Users\ayp90\OneDrive\Desktop\realj410phillips\Website (Real)\fav\Mouse 2.png" color="#da8e43">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!--End Favicon-->
+    
+<!--back to top button-->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}    
+</script>   
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" width="190" height="75" alt=""/></div>
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Home</a>
+        </li>
+	   <li>
+          <a href="#gal">Food</a>
+		  </li>
+	  	<li>
+          <a href="#tl">Destinations</a>
+        </li>
+        <li>
+          <a href="#vid"> Adventure </a>
+			</li>
+      <li>
+          <a href="#num">...And More</a>
+			</li>
+      </ul>
+</nav>
+</div>
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->	
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Welcome!</h2>
+<article>
+<p class="tab">California travel blogs are increasingly popular. But, what are the untold stories of the places, the smells and the tastes? From the diverse cultures and the hidden gems, learn everything you'd like to know about Golden State here.</p>
+<p class="tab"><a href="#gal">Food</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">food</h2>
+<article><!--beginning of article-->
+<p class="tab">Learn more about how this market shared their family stories and culture through food.</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="In the 1940s, there was a noticeable increase in Asian supermarkets in the Bay Area. The Takahashi market knew they had to specialize, so they primarily focused on Japanese and Hawaiian snacks and foods."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="Spam musubis are stored in a heating tray. They are made with a layer of SPAM, rice, sauce, and wrapped in a sheet of nori (seaweed), and make the perfect grab and go snack."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Founded by Tokutaro Takahashi in 1906, the restaurant is run by Takahashi’s grandson Gene (pictured above) and great-grandson Bobby. The restaurant proudly serves a variety of Asian treats and plate lunches."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="Ever since Tokutaro began the store in 1906, the store has changed from general store to what it is today, a locally loved Oriental goods and foods store. "/>
+<img src="img/5.jpg" width="100%" height="100%" alt="Liz Chang “really loves Hawaii. [She] just wants to find a snack for [her] daughter.” "/>
+<img src="img/6.jpg" width="100%" height="100%" alt=" The market celebrated its 100th anniversary in 2006. “That was the year we opened our deli counter,” Gene said, “and our plate lunch category expanded.”"/>
+<img src="img/7.jpg" width="100%" height="100%" alt="The deli crew began serving bentos, plate lunches and meals for every age. 
+"/>
+<img src="img/8.jpg" width="100%" height="100%" alt=" Since then, marketers who are hungry are always able to stop in for a quick lunch and locals love the kalua pork plate."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="As the market grew, they reached out to friends they considered family as well. “I’ve worked here for 10-15 years at this point. It’s just wholesome and a nice environment with friends,” said employee Brendan Bishop."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="The Takahashi market has been many stores throughout its history. But it always seems to be a meeting place for and with family. “I really want to make people feel like they’re family. Well, that’s a little cliche. I always want to make sure that they are treated with respect here,” said Gene."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Destinations</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+	
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Destinations</h2>
+<article>
+  <p class="tab">Click on images to hear stories on favorite places to visit in California! <br>(Double-click to pause audio)</p>
+  <div class="table">
+	<div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+	<source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;">
+ /&gt; 
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+	</div>
+</div>
+<p class="tab"><a href="#vid">Adventure</a></p>		
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">The Great Californian Outdoors</h2>
+<article>
+<p class="tab">When traveling, varied hikes, bike rides and trails are availible for people to explore. But what drives people to venture out to the outdoors in the first place?</p>	
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">The Data</a></p>
+</article>
+</div>
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+<h2 id="num">The Data</h2>
+<article>
+<p class="tab"> How much do you know about California, traveling and California traveling? There might be many gems in your very city that people consider popular. Some people might even travel to explore the tastes, sounds and sights of your neighborhood. </p>
+<script id="infogram_0_d7988c8d-9d92-4173-91a2-321df44f7800" title="Travel Data" src="https://e.infogram.com/js/dist/embed.js?Wta" type="text/javascript"></script><div style="padding:8px 0;font-family:Arial!important;font-size:13px!important;line-height:15px!important;text-align:center;border-top:1px solid #dadada;margin:0 30px"><a href="https://infogram.com/d7988c8d-9d92-4173-91a2-321df44f7800" style="color:#989898!important;text-decoration:none!important;" target="_blank">Travel Data</a><br><a href="https://infogram.com" style="color:#989898!important;text-decoration:none!important;" target="_blank" rel="nofollow">Infogram</a></div>
+</article>
+</div>
+<!--end of new section-->
+	
+</body>
+	
+<!--the following script controls the responsive navigation-->
+<script>
+	(function($) { // Begin jQuery
+  $(function() { // DOM ready
+   <div class="dropdown">
+   <button class="dropbtn">Dropdown</button>
+   <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+   </div>
+</div>
+	</script>
+	<script>
+	var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+	var current = headers[i];
+	headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+	for (var j = 0, col; col = row.cells[j]; j++) {
+		col.setAttribute("data-th", headertext[j]);
+	}
+}
+</script>
+    
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html>
+
+
+</article>
+</div>
+<!--end of infographic section-->
+	
+<!--beginning of footer-->
+<footer>Scrolling Over California | San Luis Obispo, CA | <a href="mailto: aphil20@calpoly.edu ?Subject=Inquiry" target="_top">Send Email</a> | Copyright 2023 | Site by Abigail Phillips
+</footer>
+<!--end of footer-->
+	
+	
+	<!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+</html> 
